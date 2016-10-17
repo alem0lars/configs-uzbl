@@ -1,0 +1,12 @@
+elems:
+
+  - src:  ^config/(.+)$
+    dst:  ~/.config/uzbl/<1>
+    only: f?uzbl
+
+  - src:  ^data/(.+)$
+    dst:  ~/.local/share/uzbl/<1>
+    only: f?uzbl
+
+
+# vim: set filetype: eruby.vim :
