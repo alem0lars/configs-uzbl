@@ -4,9 +4,20 @@ elems:
     dst:  ~/.config/uzbl/<1>
     only: f?uzbl
 
-  - src:  ^data/(.+)$
+  - src:  ^data/([^/]+)$
     dst:  ~/.local/share/uzbl/<1>
     only: f?uzbl
+
+  - # Executable scripts.
+    src:  ^data/scripts/(.+\.(?:sh|rb|py))$
+    dst:  ~/.local/share/uzbl/scripts/<1>
+    perms: 755
+    only: f?uzbl
+
+  - # Non-Executable scripts.
+    src:   ^data/scripts/(.+\.(?!.*(?:sh|rb|py)).+)$
+    dst:   ~/.local/share/uzbl/scripts/<1>
+    only:  f?uzbl
 
 
 # vim: set filetype: eruby.vim :
